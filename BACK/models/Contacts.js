@@ -1,10 +1,10 @@
 const mongoose = require('mongoose')
 
 const ContactSchema = new mongoose.Schema({
-    Name : String,
-    LastName : String,
-    Number : Number,
-    Email: String
+    name : String,
+    lastName : String,
+    number : Number,
+    email: String
 
 }, {timestamps:true})
 
