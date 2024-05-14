@@ -34,7 +34,7 @@ const ContactController={
                 if (!contact) {
                     res.json({message:"contact not found"})
                 }
-                res.json(`contact ${contact.Name} Eliminated`)
+                res.json(`contact ${contact.name} Eliminated`)
             } catch (error) {
                 console.log(error)
             }
@@ -42,18 +42,19 @@ const ContactController={
         async updateByID (req,res){
             try {
                 const id = req.params._id
-                const {Name,LastName,Number,Email}=req.body
+                const {name,lastName,number,email}=req.body
 
                 const contact = await Contact.findByIdAndUpdate(id,{
-                    Name,
-                    LastName,
-                    Number,
-                    Email
+                    name,
+                    lastName, 
+                    number,
+                    email
                 },{new:true})
                 if (!contact) {
                     res.json({message:"contact not found"})
                 }
-                res.json(`contact ${contact.Name} Updated`)
+                res.json(`contact ${contact.name} Updated`)
+                console.log("Resultado de la actualización en la base de datos:", contact);
             } catch (error) {
                 console.log(error)
             }

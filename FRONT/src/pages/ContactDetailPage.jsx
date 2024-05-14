@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import UseFetch from '../hooks/UseFetch'
 import { ContactContext } from '../contexts/ContactProvider'
+import Modal from '../components/Modal'
 
 function ContactDetailPage() {
     const { _id } = useParams()
@@ -9,6 +10,10 @@ function ContactDetailPage() {
 
     const {deleteContact} = useContext(ContactContext)
     const [errorDelete,setErrorDelete]= useState("")
+
+    const [modalOpen,setModalOpen]= useState(false)
+
+
 
     const handleDelete = async()=>{
         try {
@@ -28,6 +33,8 @@ function ContactDetailPage() {
                 <>
                     <p>{data.name}</p>
                     <button onClick={handleDelete}>delete</button>
+                    <button onClick={()=>setModalOpen(true)}>edit modal</button>
+                    < Modal isOpen={modalOpen} closeModal={()=>setModalOpen(false)}/>
                    
                 </>
             )}
