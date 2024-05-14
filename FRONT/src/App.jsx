@@ -1,14 +1,17 @@
 
 import Routes from './components/Routes'
+import {ContactProvider}  from './contexts/ContactProvider'
 
 import './App.css'
 
 function App() {
- 
+
 
   return (
     <>
-    <Routes />
+      <ContactProvider>
+        <Routes />
+      </ContactProvider>
     </>
   )
 }

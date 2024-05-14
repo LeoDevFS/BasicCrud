@@ -17,9 +17,6 @@ function AllContactsPage() {
         ))}
       </ul>
       <Link to='/create'>Crear</Link>
-    
-
-
     </>
   )
 }

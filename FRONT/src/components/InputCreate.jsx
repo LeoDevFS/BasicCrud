@@ -27,7 +27,7 @@ function InputCreate() {
           })
           if(response.ok){
             const data = await response.json()
-            setRes(`${data.name}${data.lastName}`)
+            setRes(`${data.name} ${data.lastName}`)
             setName('')
             setLastName('')
             setNumber('')
