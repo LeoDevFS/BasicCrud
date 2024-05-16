@@ -8,12 +8,12 @@ function AllContactsPage() {
 
   return (
       <>
-      <h1>Contacts</h1>
-      <ul>
-        {error && <li>{error}</li>}
-        {loading && <li>loading...</li>}
+      <h1 className="title">Contacts</h1>
+      <ul className="containerList">
+        {error && <li className="error">{error}</li>}
+        {loading && <li className="loading">loading...</li>}
         {data?.map((contact) => (
-          <Link to={`/id/${contact._id}`} key={contact._id}> {contact.name} </Link>
+          <Link to={`/id/${contact._id}`} key={contact._id} className="contact"> {contact.name} </Link>
         ))}
       </ul>
       <Link to='/create'>Crear</Link>
