@@ -12,7 +12,7 @@ export function ContactProvider({children}) {
 
   const deleteContact = async(id) =>{
 
-    const urlDelete = `http://localhost:2323/id/${id}`
+    const urlDelete = `https://basiccrud-production-ba41.up.railway.app/id/${id}`
     try {
       const res = await fetch(urlDelete,{
         method:'DELETE',
@@ -31,7 +31,7 @@ export function ContactProvider({children}) {
   }
 
   const updateContact = async(id,payload)=>{
-    const urlUpdate = `http://localhost:2323/id/${id}`
+    const urlUpdate = `https://basiccrud-production-ba41.up.railway.app/id/${id}`
     try {
       const res = await fetch(urlUpdate,{
         method:'PUT',

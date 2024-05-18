@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 
 function AllContactsPage() {
-    const { data, loading, error } = UseFetch("http://localhost:2323")
+    const { data, loading, error } = UseFetch("https://basiccrud-production-ba41.up.railway.app")
      // <Link to={`/id/${contact._id}`} key={contact._id} className="contactDetailLink"> {contact.name} {contact.email}</Link>
 
   return (

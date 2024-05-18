@@ -12,7 +12,7 @@ function InputUpdate() {
   const payload = {name,lastName,number,email}
 
   const { _id } = useParams()
-  const { data, loading, error } = UseFetch(`http://localhost:2323/id/${_id}`)
+  const { data, loading, error } = UseFetch(`https://basiccrud-production-ba41.up.railway.app/id/${_id}`)
 
   const { updateContact } = useContext(ContactContext)
   const [errorUpdate, setErrorUpdate] = useState("")

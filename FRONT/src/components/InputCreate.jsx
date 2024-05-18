@@ -9,7 +9,7 @@ function InputCreate() {
     const [number,setNumber] = useState('')
     const [email,setEmail] = useState('')
     
-    const urlApiCreate = 'http://localhost:2323/create'
+    const urlApiCreate = 'https://basiccrud-production-ba41.up.railway.app/create'
     const [res, setRes]= useState(null)
     const payload = {name,lastName,number,email}
 
