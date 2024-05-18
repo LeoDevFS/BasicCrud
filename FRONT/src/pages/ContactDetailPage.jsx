@@ -6,7 +6,7 @@ import Modal from '../components/Modal'
 
 function ContactDetailPage() {
     const { _id } = useParams()
-    const { data, loading, error } = UseFetch(`http://localhost:2323/id/${_id}`)
+    const { data, loading, error } = UseFetch(`https://basiccrud-production-ba41.up.railway.app/id/${_id}`)
 
     const { deleteContact } = useContext(ContactContext)
     const [errorDelete, setErrorDelete] = useState("")
