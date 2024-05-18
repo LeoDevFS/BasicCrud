@@ -7,17 +7,17 @@ import { Link } from 'react-router-dom'
 function AllContactsPage() {
     const { data, loading, error } = UseFetch("https://basiccrud-production-ba41.up.railway.app")
      // <Link to={`/id/${contact._id}`} key={contact._id} className="contactDetailLink"> {contact.name} {contact.email}</Link>
-     const [orderData, setorderData] = useState([]);
+     const [orderData, setorderData] = useState([])
 
      
      useEffect(() => {
-      setorderData(data);
-  }, [data]);
+      setorderData(data)
+  }, [data])
 
   const sortContacts = () => {
-    const order = [...orderData].sort((a, b) => a.name.localeCompare(b.name));
-    setorderData(order);
-};
+    const order = [...orderData].sort((a, b) => a.name.localeCompare(b.name))
+    setorderData(order)
+}
 
   
 
@@ -32,10 +32,10 @@ function AllContactsPage() {
          
           <table className='tabla'>
             <tr>
-              <th>Nombre</th>
-              <th>apellido</th>
-              <th>email</th>
-              <th>numero</th>
+              <th>Name</th>
+              <th>Last Name</th>
+              <th>E-mail</th>
+              <th>Contact Number</th>
             </tr>
         {orderData?.map((contact) => (
           
@@ -49,7 +49,7 @@ function AllContactsPage() {
           </table>
       </ul>
   
-      <button onClick={sortContacts} className="sortButton">Sort Alphabetically</button>
+      <button onClick={sortContacts} className="sortButton">Sort</button>
       <Link to='/create' className="createButton">Create New Contact</Link>
       </div>
     </>

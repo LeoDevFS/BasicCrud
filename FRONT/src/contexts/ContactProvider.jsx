@@ -1,15 +1,13 @@
 import React, {  createContext, useState } from 'react'
 
+// Aqui se podria haber establecido un fecth general y trabajar mas sencillo pero queria usar aunque sea 1 custom hook
+
 
 export const ContactContext = createContext()
 
 export function ContactProvider({children}) {
   
  
-
-  const [contact,setContact]=useState([])
-  const [error,setError] = useState([])
-
   const deleteContact = async(id) =>{
 
     const urlDelete = `https://basiccrud-production-ba41.up.railway.app/id/${id}`
