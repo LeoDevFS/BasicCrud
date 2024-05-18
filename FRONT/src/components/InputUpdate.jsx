@@ -51,7 +51,7 @@ function InputUpdate() {
  <input type="text" value={email}  onChange={(e)=>setEmail(e.target.value)} placeholder='email of contact' required/>
  <input type="number" value={number}  onChange={(e)=>setNumber(e.target.value)} placeholder='number' required/>
  
- <button type='submit'>crear contacto</button>
+ <button type='submit'>Update Contact</button>
 </form> 
 
 

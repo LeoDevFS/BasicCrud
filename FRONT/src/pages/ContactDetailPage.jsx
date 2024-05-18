@@ -8,20 +8,20 @@ function ContactDetailPage() {
     const { _id } = useParams()
     const { data, loading, error } = UseFetch(`http://localhost:2323/id/${_id}`)
 
-    const {deleteContact} = useContext(ContactContext)
-    const [errorDelete,setErrorDelete]= useState("")
+    const { deleteContact } = useContext(ContactContext)
+    const [errorDelete, setErrorDelete] = useState("")
 
-    const [modalOpen,setModalOpen]= useState(false)
+    const [modalOpen, setModalOpen] = useState(false)
 
 
 
-    const handleDelete = async()=>{
+    const handleDelete = async () => {
         try {
-            await deleteContact (data._id)
+            await deleteContact(data._id)
             alert("contacto borrado")
-            
+
         } catch (error) {
-            setErrorDelete("contacto no borrado :  "+ errorDelete)
+            setErrorDelete("contacto no borrado :  " + errorDelete)
         }
     }
 
@@ -31,15 +31,23 @@ function ContactDetailPage() {
             {loading && <li>loading...</li>}
             {data && (
                 <>
-                    <p>{data.name}</p>
-                    <button onClick={handleDelete}>delete</button>
-                    <button onClick={()=>setModalOpen(true)}>edit modal</button>
-                    < Modal isOpen={modalOpen} closeModal={()=>setModalOpen(false)}/>
-                   
+                    <div className="card">
+                        <p>Name: {data.name}</p>
+                        <p>Last Name: {data.lastName} </p>
+                        <p>Contact Number: {data.number}</p>
+                        <p>E-mail: {data.email} </p>
+                    </div>
+
+                    <div className='editionButtons'>
+                        <button className='deleteBtn' onClick={handleDelete}>Delete</button>
+                        <button className='updatebtn' onClick={() => setModalOpen(true)}>Edit Contact</button>
+                        < Modal isOpen={modalOpen} closeModal={() => setModalOpen(false)} />
+                    </div>
+
                 </>
             )}
 
-            <Link to='/'>home</Link>
+            <Link className='homeBtn' to='/'>home</Link>
         </>
     )
 }

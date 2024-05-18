@@ -1,15 +1,20 @@
 
 .modal{
+    position: absolute;
+    top: 16%;
+    left: 30%;
     background-color: gray;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 600px;
-    height: 600px;
+    width: 100vh;
+    height: 700px;
+    z-index: 1;
   
 }
 
 .container{
+   
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -17,4 +22,5 @@
     padding: 10px;
     height: 400px;
     width: 400px; 
+    
 }

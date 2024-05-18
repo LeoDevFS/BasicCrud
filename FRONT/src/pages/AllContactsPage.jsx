@@ -5,18 +5,37 @@ import { Link } from 'react-router-dom'
 
 function AllContactsPage() {
     const { data, loading, error } = UseFetch("http://localhost:2323")
+     // <Link to={`/id/${contact._id}`} key={contact._id} className="contactDetailLink"> {contact.name} {contact.email}</Link>
 
   return (
       <>
+      <div className="workSpaceContainer">
+
       <h1 className="title">Contacts</h1>
       <ul className="containerList">
         {error && <li className="error">{error}</li>}
         {loading && <li className="loading">loading...</li>}
+         
+          <table className='tabla'>
+            <tr>
+              <th>Nombre</th>
+              <th>apellido</th>
+              <th>email</th>
+              <th>numero</th>
+            </tr>
         {data?.map((contact) => (
-          <Link to={`/id/${contact._id}`} key={contact._id} className="contact"> {contact.name} </Link>
+          
+            <tr className="contactDetailLink">
+              <td ><Link to={`/id/${contact._id}`} key={contact._id} > {contact.name}</Link></td>
+              <td>{contact.lastName}</td>
+              <td>{contact.email}</td>
+              <td>{contact.number}</td>
+            </tr>
         ))}
+          </table>
       </ul>
-      <Link to='/create'>Crear</Link>
+      <Link to='/create' className="createButton">Create New Contact</Link>
+      </div>
     </>
   )
 }

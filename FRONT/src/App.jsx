@@ -37,7 +37,7 @@ function App() {
 
               </div>
             </div>
-            <h3>Listado de alumnos</h3>
+           
             <div className="bodyOperator">
             <Routes />
 
