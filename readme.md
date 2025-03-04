@@ -1,6 +1,6 @@
 # Lista de contactos. Ejercicio de CRUD con React, Node.js (Express) y MongoDB
 
-Este ejercicio consiste en crear una aplicación web de gestión de contactos utilizando React para el frontend, Node.js con Express para el backend, y MongoDB como base de datos.
+Este proyecto consiste en una aplicación web de gestión de contactos utilizando React para el frontend, Node.js con Express para el backend, y MongoDB como base de datos.
 
 Tendremos dos repositorios, uno con el Backend (API con los endpoints) y otro con el Frontend
 
